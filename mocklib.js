@@ -6,7 +6,7 @@
  * Include one of our pre-baked mocks
  */
 
-function require(name) {
+function requireMock(name) {
 	return require("./mocks/"+name) ;
 }
 
@@ -80,5 +80,5 @@ function proxy(o){
 module.exports = {
 	mockModule:mockModule,
 	proxy:proxy,
-	require:require
+	require:requireMock
 }
