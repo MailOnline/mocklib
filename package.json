@@ -1,0 +1,24 @@
+{
+  "name": "mocklib",
+  "version": "1.0.0",
+  "description": "A simple NodeJS module for instrumenting existing code (including other people's), useful for creating test with, for example, Mocha.",
+  "main": "mocklib.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:MailOnline/mocklib.git"
+  },
+  "keywords": [
+    "testing",
+    "instrumentation",
+    "mocha"
+  ],
+  "author": "MattW",
+  "license": "ISC",
+  "devDependencies": {
+    "fakeredis": "^0.3.0",
+    "redis": "^0.12.1"
+  }
+}
