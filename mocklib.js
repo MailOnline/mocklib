@@ -39,10 +39,10 @@ function mockModule(original, mock) {
  * @param o		The object to proxy
  * @returns
  */
-function proxy(o){
+function proxy(o,includePrototypes){
 	if (!o._proxyTarget) {
 		var m = {} ;
-		Object.keys(o).forEach(function(k){
+		function createProxy(k){
 			if (typeof o[k]==='function') {
 				m[k] = {unmocked:o[k],traps:[]} ;
 				o[k] = function() {
@@ -69,7 +69,15 @@ function proxy(o){
 			} else {
 				m[k] = o[k] ;
 			}
-		}) ;
+		}
+		
+		if (includePrototypes) {
+			for (var k in o)
+				createProxy(o[k]) ;
+		} else {
+			Object.keys(o).forEach(createProxy) ;
+		}
+		
 		// Unconfigurable, unwritable
 		Object.defineProperty(o,"_proxyTarget",{value:m});
 	}
