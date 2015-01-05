@@ -20,7 +20,7 @@ fakeredis.createClient = function(){
 	}
 	var client = createClient() ;
 	client._mock = {
-		createClient:createClient
+		cloneClient:createClient
 	}
 	return client ;
 }
