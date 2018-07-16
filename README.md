@@ -1,6 +1,8 @@
 Mocklib
 =======
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MailOnline/mocklib.svg)](https://greenkeeper.io/)
+
 Utilities for creating and managing mocks (object proxies)
 
 Installation
